@@ -87,3 +87,15 @@ Missing values were identified using Pandas functions such as:
 
 ```python
 df.isnull().sum()
+
+###  4. Date Conversion
+
+The order timestamp columns were converted into datetime format.
+
+for column in date_columns:
+    orders[column] = pd.to_datetime(
+        orders[column],
+        errors="coerce"
+    )
+
+This makes date-based calculations easier and more reliable.
